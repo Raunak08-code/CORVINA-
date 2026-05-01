@@ -1,0 +1,33 @@
+2026-05-01 18:33:35,471 - INFO - Fetched email from raukey08@gmail.com with subject 'Looking for internship'
+2026-05-01 18:38:47,400 - INFO - Fetched email from raukey08@gmail.com with subject 'Looking for internship'
+2026-05-01 18:38:48,107 - INFO - Parsed intent: job_request
+2026-05-01 18:38:48,114 - INFO - Selected template for intent: job_request
+2026-05-01 18:38:48,115 - INFO - Processing email from raukey08@gmail.com
+2026-05-01 18:38:48,115 - INFO - Reply sent for intent: job_request
+2026-05-01 18:38:52,000 - INFO - Email sent to raukey08@gmail.com
+2026-05-01 19:30:04,094 | INFO | Fetched email from raukey08@gmail.com with subject 'Greetings from RP'
+2026-05-01 19:30:04,447 | WARNING | NO keyword detected, defaulting to general intent
+2026-05-01 19:30:04,448 | INFO | Parsed intent: general
+2026-05-01 19:30:04,449 | INFO | Selected template for intent: general
+2026-05-01 19:30:04,450 | INFO | Processing email from raukey08@gmail.com
+2026-05-01 19:30:04,450 | INFO | Reply sent for intent: general
+2026-05-01 19:30:04,477 | ERROR | Attempt 1 failed for raukey08@gmail.com: [Errno -2] Name or service not known
+2026-05-01 19:30:04,477 | INFO | Retrying in 2 seconds...
+2026-05-01 19:30:06,499 | ERROR | Attempt 2 failed for raukey08@gmail.com: [Errno -2] Name or service not known
+2026-05-01 19:30:06,499 | INFO | Retrying in 2 seconds...
+2026-05-01 19:30:06,845 | ERROR | Attempt 3 failed for raukey08@gmail.com: [Errno -2] Name or service not known
+2026-05-01 19:30:06,845 | ERROR | All retry attempts failed for raukey08@gmail.com
+2026-05-01 19:30:06,845 | ERROR | Failed to process email for raukey08@gmail.com
+2026-05-02 01:17:28 | INFO | Fetched email from raukey08@gmail.com with subject 'Greetings from RP'
+2026-05-02 01:17:28 | WARNING | NO keyword detected, defaulting to general intent
+2026-05-02 01:17:28 | INFO | Parsed intent: general
+2026-05-02 01:17:28 | INFO | Selected template for intent: general
+2026-05-02 01:17:28 | INFO | Processing email from raukey08@gmail.com
+2026-05-02 01:17:28 | INFO | Reply sent for intent: general
+2026-05-02 01:17:28 | ERROR | Attempt 1 failed for raukey08@gmail.com: [Errno -2] Name or service not known
+2026-05-02 01:17:28 | INFO | Retrying in 2 seconds...
+2026-05-02 01:17:30 | ERROR | Attempt 2 failed for raukey08@gmail.com: [Errno -2] Name or service not known
+2026-05-02 01:17:30 | INFO | Retrying in 2 seconds...
+2026-05-02 01:17:32 | ERROR | Attempt 3 failed for raukey08@gmail.com: [Errno -2] Name or service not known
+2026-05-02 01:17:32 | ERROR | All retry attempts failed for raukey08@gmail.com
+2026-05-02 01:17:32 | ERROR | Failed to process email for raukey08@gmail.com

@@ -1,5 +1,8 @@
 import json
 import os 
+from core.logger import get_logger
+
+logger = get_logger()
 
 RULES_PATH = os.path.join("config","rules.json")
 TEMPLATES_DIR = "templates"
@@ -12,6 +15,8 @@ def get_reply_templates(intent):
     rules = load_rules()
 
     template_file = rules.get(intent,rules.get("general"))
+    
+    logger.info(f"Selected template for intent: {intent}")
 
     template_path = os.path.join(TEMPLATES_DIR,template_file)
 

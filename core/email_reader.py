@@ -4,9 +4,10 @@ from email.header import decode_header
 import os
 from dotenv import load_dotenv
 from email.utils import parseaddr
+from core.logger import get_logger
 
 load_dotenv()
-
+logger = get_logger()
 
 def clean_text(text):
     return text.replace("\r", "").replace("\n", " ").strip()
@@ -74,8 +75,8 @@ def fetch_emails():
                     if not body.strip():
                         continue
 
-                    print("BODY TYPE:", type(body), "| SAMPLE:", str(body)[:50])
-
+                    logger.info(f"Fetched email from {sender} with subject '{subject}'")
+                    
                     # adding date
                     date = msg.get("Date")
 
@@ -91,7 +92,7 @@ def fetch_emails():
         mail.logout()
 
     except Exception as e:
-        print("Error:", e)
+        logger.error(f"Error fetching emails: {e}")
 
     
     return emails_data

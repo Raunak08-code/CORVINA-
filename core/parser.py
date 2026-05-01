@@ -1,4 +1,7 @@
 import re 
+from core.logger import get_logger
+
+logger = get_logger()
 
 def clean_text(text):
     if not isinstance(text, str):
@@ -16,14 +19,18 @@ def parse_email(email):
     if not isinstance(raw_body, str):
         raw_body = ""
 
+    # cheaning the text from any special character 
     text = clean_text(raw_body)
 
+    # getting keywords..
     keywords = []
-
     if "internship" in text:
         keywords.append("internship")
     if "meeting" in text:
         keywords.append("meeting")
+
+    if not keywords:
+        logger.warning("NO keyword detected, defaulting to general intent")
 
     # intent checking
     if "internship" in text or "job" in text:
@@ -32,6 +39,9 @@ def parse_email(email):
         intent = "meeting"
     else:
         intent = "general"
+
+    # imputing into logger file
+    logger.info(f"Parsed intent: {intent}")
 
     return {
         "clean_text": text,

@@ -3,6 +3,9 @@ from core.email_reader import fetch_emails
 from core.parser import parse_email
 from core.rule_engine import get_reply_templates
 from core.email_sender import send_email
+from core.logger import get_logger
+
+logger = get_logger()
 
 emails = fetch_emails()
 
@@ -22,12 +25,18 @@ for e in emails:
 
     reply = get_reply_templates(parsed["intent"])
 
-    print("SENDING REPLY...")
+    logger.info(f"Processing email from {e.get('from')}")
+    logger.info(f"Reply sent for intent: {parsed['intent']}")
 
-    send_email(
+    success = send_email(
         to_email = e["from"],
         subject = e["subject"],
         body = reply
     )
+
+    if success:
+        logger.info(f"Reply seccessfully processed for {e['from']}")
+    else:
+        logger.error(f"Failed to process email for {e['from']}")
 
     print("===============")
