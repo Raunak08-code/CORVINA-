@@ -53,6 +53,19 @@ Recipient Inbox
 
 ---
 
+## 🎥 Demo
+
+Example:
+
+Input Email:
+"Looking for internship"
+
+System Output:
+- Intent detected: job_request
+- Response sent automatically
+
+---
+
 ## 📂 Project Structure
 
 ```
