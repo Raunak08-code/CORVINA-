@@ -1,137 +1,146 @@
-### 🐦‍⬛ CORVINA~
+# 🐦‍⬛ CORVINA — Automated Email Response System
 
-Intelligent Email Understanding and Response System
-> CORVINA is an AI-powered backend system that reads emails, understands intent, drafts intelligent replies, and sends approved responses — all through a clean API.
+> CORVINA is a modular backend system that automatically reads emails, understands intent, generates responses, and sends replies — forming a complete automation pipeline.
 
+---
 
+## 🚀 Overview
 
-----
+CORVINA is designed as a **real-world backend automation system**, not a simple script.
 
-### ❓ Why CORVINA?
+It connects to an email inbox, processes incoming messages, identifies intent using rule-based logic, and sends appropriate responses automatically using SMTP.
 
-Manual email handling is slow, repetitive, and error-prone.  
-CORVINA automates the thinking part — while keeping humans in control.
+---
 
-It is designed as a **real-world backend system**, not a demo script.
+## 🧠 Key Features
 
+* 📥 Fetch unread emails using IMAP
+* 🧹 Clean and normalize email content
+* 🧠 Rule-based intent detection (internship, meeting, etc.)
+* 📄 Template-driven response generation
+* 📤 Automated email replies via SMTP
+* ⚙️ Modular backend architecture
 
+---
 
----------------------------------------------------------------------------------------------------------------
+## 🏗️ System Architecture
 
-### 🚀 Overview
+```
+Gmail Inbox
+    ↓ (IMAP)
+Email Reader
+    ↓
+Parser (clean + intent detection)
+    ↓
+Rule Engine (decision logic)
+    ↓
+Template Generator
+    ↓
+Email Sender (SMTP)
+    ↓
+Recipient Inbox
+```
 
-CORVINA is an AI-powered backend system that automatically reads incoming emails, understands their content, generates intelligent replies, manages drafts, and sends approved responses.
+---
 
-This project focuses on real-world backend architecture, system integration, and automation using Python and FastAPI.
+## 🔁 Execution Flow
 
---------------------------------------------------------------------------------------------------------------
+1. Fetch unread emails from inbox
+2. Parse and clean email content
+3. Detect intent using rule-based logic
+4. Select response template from config
+5. Send automated reply using SMTP
 
-### 🧠 Key Features
-	
-* Read unread emails via Gmail IMAP
-* Clean and preprocess email content
-* Generate AI-based reply drafts
-* Store and manage pending drafts
-* Approve and send replies via SMTP
-* REST API with Swagger documentation
+---
 
---------------------------------------------------------------------------------------------------------------
+## 📂 Project Structure
 
-### 🏗️ System Architecture
+```
+corvina/
+├── core/
+│   ├── email_reader.py
+│   ├── parser.py
+│   ├── rule_engine.py
+│   ├── email_sender.py
+│   ├── email_cleaner.py
+│   ├── responder.py
+│
+├── config/
+│   └── rules.json
+│
+├── templates/
+│   ├── internship_reply.txt
+│   ├── meeting_reply.txt
+│   └── default_reply.txt
+│
+├── logs/
+├── run.py
+├── requirements.txt
+└── .env.example
+```
 
-	Gmail Inbox
-		↓ (IMAP)
-	Email Reader
-		 ↓
-	Email Cleaner
-		 ↓
-	AI Responder (CORVINA)
-		 ↓
-	Draft Store
-		 ↓ (Approval)
-	Email Sender (SMTP)
-		 ↓
-	Recipient Inbox
+---
 
-		
-## >**Flow Explanation:**
-- Emails are fetched securely via IMAP
-- Content is cleaned and normalized
-- AI generates a contextual reply
-- Replies are stored as drafts
-- Human approval triggers final sending
+## ⚙️ Setup (Local)
 
+```bash
+# Clone repo
+git clone <your-repo-link>
+cd corvina
 
--------
+# Create virtual environment
+python3 -m venv venv
+source venv/bin/activate
 
+# Install dependencies
+pip install -r requirements.txt
 
-### 🔌 API Endpoints
+# Add environment variables
+cp .env.example .env
+# Fill credentials
 
-| Method | Endpoint | Description |
-|------|---------|-------------|
-| GET | `/email/read` | Fetch unread emails |
-| POST | `/email/ai-draft` | Generate AI reply draft |
-| GET | `/email/drafts` | View pending drafts |
-| POST | `/email/approve` | Approve & send reply |
+# Run system
+python run.py
+```
 
---------------------------------------------------------------------------------------------------------------
+---
 
-### 🛠️ Tech Stack
+## 🔐 Environment Variables
 
-	Python 3.12
-	FastAPI
-	Uvicorn
-	Gmail IMAP & SMTP
-	OpenAI API
-	dotenv
-	Git & GitHub
+```
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_app_password
+IMAP_SERVER=imap.gmail.com
+SMTP_SERVER=smtp.gmail.com
+SMTP_PORT=587
+```
 
---------------------------------------------------------------------------------------------------------------
+---
 
+## 📈 What This Project Demonstrates
 
-### 📂 Project Structure
+* Backend system design (modular architecture)
+* Email automation using IMAP & SMTP
+* Rule-based decision engine
+* Clean separation of concerns
+* Secure configuration management
+* Real-world automation pipeline
 
-	CORVINA/
-	├── main.py
-	├── utils/
-	│   ├── email_reader.py
-	│   ├── email_cleaner.py
-	│   ├── ai_responder.py
-	│   ├── draft_store.py
-	│   └── email_sender.py
-	├── .env.example
-	├── .gitignore
-	└── README.md
+---
 
-------------------------------------------------------------------------------------------------------------
+## 🚧 Future Improvements
 
-### ⚙️ Setup (Local)
+* Add FastAPI API layer
+* Integrate AI-based response generation
+* Add logging & monitoring system
+* Implement retry & queue mechanism
+* Dockerize for deployment
 
-*	Clone the repository	
-*	Create virtual environment
-*	Install dependencies
-*	Add .env with credentials
-*	Run uvicorn main:app --reload
-*	Open http://127.0.0.1:8000/docs
-
-------------------------------------------------------------------------------------------------------------
-
-###	📈 What this Project Demonstrates
-
-- Backend system design with FastAPI
-- IMAP & SMTP integration
-- Environment variable security
-- AI integration with approval workflow
-- Draft-based async processing
-- Error handling & observability
-
-------------------------------------------------------------------------------------------------------------
+---
 
 ## 👤 Author
 
-**Raunak Pandey**  
-Backend & AI Systems Developer  
+**Raunak Pandey**
+Backend & AI Systems Developer
 
-Built CORVINA as a hands-on system design project to understand real-world backend workflows.
-
-
+Built CORVINA as a system design project to simulate real-world automation workflows.
