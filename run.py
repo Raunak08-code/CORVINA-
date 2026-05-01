@@ -10,23 +10,16 @@ logger = get_logger()
 emails = fetch_emails()
 
 for e in emails:
-    print("RAW EMAIL:", e)
-    print("-------")
 
     # safty check -->  very import to not reply its self it will couse infinite self loop 
     if e["from"] == os.getenv("EMAIL_USER"):
-        print("Skipping self email...")
         continue
 
     parsed = parse_email(e)
-
-    print("PARSED:")
-    print(parsed)
-
     reply = get_reply_templates(parsed["intent"])
 
     logger.info(f"Processing email from {e.get('from')}")
-    logger.info(f"Reply sent for intent: {parsed['intent']}")
+    logger.info(f"Intent detected: {parsed['intent']}")
 
     success = send_email(
         to_email = e["from"],
@@ -38,5 +31,3 @@ for e in emails:
         logger.info(f"Reply seccessfully processed for {e['from']}")
     else:
         logger.error(f"Failed to process email for {e['from']}")
-
-    print("===============")

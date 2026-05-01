@@ -31,3 +31,18 @@
 2026-05-02 01:17:32 | ERROR | Attempt 3 failed for raukey08@gmail.com: [Errno -2] Name or service not known
 2026-05-02 01:17:32 | ERROR | All retry attempts failed for raukey08@gmail.com
 2026-05-02 01:17:32 | ERROR | Failed to process email for raukey08@gmail.com
+2026-05-02 01:46:49 | INFO | Fetched email from raukey08@gmail.com with subject 'Looking for internship'
+2026-05-02 01:57:48 | INFO | Fetched email from raukey08@gmail.com with subject 'Looking for internship'
+2026-05-02 01:57:49 | INFO | Parsed intent: job_request
+2026-05-02 01:57:49 | INFO | Selected template for intent: job_request
+2026-05-02 01:57:49 | ERROR | Attempt 1 failed for raukey08@gmail.com: [Errno -2] Name or service not known
+2026-05-02 01:57:49 | INFO | Retrying in 2 seconds...
+2026-05-02 01:57:51 | ERROR | Attempt 2 failed for raukey08@gmail.com: [Errno -2] Name or service not known
+2026-05-02 01:57:51 | INFO | Retrying in 2 seconds...
+2026-05-02 01:57:53 | ERROR | Attempt 3 failed for raukey08@gmail.com: [Errno -2] Name or service not known
+2026-05-02 01:57:53 | ERROR | All retry attempts failed for raukey08@gmail.com
+2026-05-02 02:06:25 | INFO | Fetched email from raukey08@gmail.com with subject 'Letter for leave'
+2026-05-02 02:06:26 | WARNING | NO keyword detected, defaulting to general intent
+2026-05-02 02:06:26 | INFO | Parsed intent: general
+2026-05-02 02:06:26 | INFO | Selected template for intent: general
+2026-05-02 02:06:30 | INFO | Email sent to raukey08@gmail.com on attempt 1

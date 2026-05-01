@@ -12,8 +12,8 @@ load_dotenv()
 def send_email(to_email, subject, body, max_retries=3, delay=2):
     EMAIL_USER = os.getenv("EMAIL_USER")
     EMAIL_PASS = os.getenv("EMAIL_PASS")
-    # SMTP_SERVER = os.getenv("SMTP_SERVER")
-    SMTP_SERVER = "wrong.smtp.server"  # only for testing
+    SMTP_SERVER = os.getenv("SMTP_SERVER")
+    # SMTP_SERVER = "wrong.smtp.server"  # only for testing
     SMTP_PORT = int(os.getenv("SMTP_PORT"))
 
     for attempt in range(1,max_retries+1):
