@@ -15,7 +15,13 @@ def root():
 
 @app.get("/process-emails")
 def process_email():
-    emails = fetch_emails()
+    try:
+        emails = fetch_emails()
+    except Exception as e:
+        logger.error( f"failed to fetch emails: {e}")
+        return {"error": "email fetch failed"}
+
+
     results = []
 
     for e in emails:
@@ -38,4 +44,13 @@ def process_email():
             "status": "sent" if success else "failed"
         })
 
-    return {"processed": results}
+    total = len(results)
+    success_count = sum(1 for r in results if r["status"] == "sent")
+    failed_count = total - success_count
+
+    return {
+        "total": total,
+        "success": success_count,
+        "failed": failed_count,
+        "details": results
+    }

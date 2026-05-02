@@ -13,6 +13,14 @@ def clean_text(text):
 
 
 def parse_email(email):
+    if not email.get("body"):
+        logger.warning("empty email body detected")
+        return {
+            "clean_text": "",
+            "keywords": [],
+            "intent": "general"
+        }
+    
     raw_body = email.get("body", "")
 
     # SAFETY CHECK

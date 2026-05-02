@@ -11,6 +11,9 @@ venv/
 # Runtime data
 drafts.json
 
+# logs file
+logs/
+
 # IDE
 .vscode/
 .idea/
