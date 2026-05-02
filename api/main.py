@@ -15,6 +15,8 @@ def root():
 
 @app.get("/process-emails")
 def process_email():
+    logger.info("API triggered email processing")
+
     try:
         emails = fetch_emails()
     except Exception as e:
@@ -24,7 +26,7 @@ def process_email():
     if not emails:
         logger.info("NO unread emails found")
 
-        
+
     results = []
 
     for e in emails:
@@ -41,6 +43,10 @@ def process_email():
             body=reply
         )
 
+        if success:
+            logger.info(f"Email sent to {e['from']}")
+        else:
+            logger.error(f"Failed to sent {e['from']}")
         results.append({
             "from": e["from"],
             "intent": parsed["intent"],
