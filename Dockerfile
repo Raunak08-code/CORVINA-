@@ -11,7 +11,7 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # ensure log folder exists
-RUN mksir -p logs
+RUN mkdir -p logs
 
 # expose port
 EXPOSE 8080
