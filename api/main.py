@@ -21,7 +21,10 @@ def process_email():
         logger.error( f"failed to fetch emails: {e}")
         return {"error": "email fetch failed"}
 
+    if not emails:
+        logger.info("NO unread emails found")
 
+        
     results = []
 
     for e in emails:

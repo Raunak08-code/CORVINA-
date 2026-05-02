@@ -45,4 +45,23 @@
 2026-05-02 02:06:26 | WARNING | NO keyword detected, defaulting to general intent
 2026-05-02 02:06:26 | INFO | Parsed intent: general
 2026-05-02 02:06:26 | INFO | Selected template for intent: general
-2026-05-02 02:06:30 | INFO | Email sent to raukey08@gmail.com on attempt 1
+2026-05-02 02:06:30 | INFO | Email sent to raukey08@gmail.com on attempt 12026-05-03 00:21:06 | INFO | Fetched email from raukey08@gmail.com with subject 'Looking for internship'
+2026-05-03 00:21:07 | INFO | Parsed intent: job_request
+2026-05-03 00:21:07 | INFO | Selected template for intent: job_request
+2026-05-03 00:21:11 | INFO | Email sent to raukey08@gmail.com on attempt 1
+2026-05-03 00:24:51 | INFO | Fetched email from raukey08@gmail.com with subject 'For leave'
+2026-05-03 00:24:51 | WARNING | NO keyword detected, defaulting to general intent
+2026-05-03 00:24:51 | INFO | Parsed intent: general
+2026-05-03 00:24:51 | INFO | Selected template for intent: general
+2026-05-03 00:24:54 | INFO | Email sent to raukey08@gmail.com on attempt 1
+2026-05-03 00:30:27 | INFO | Fetched email from raukey08@gmail.com with subject 'Looking for college application'
+2026-05-03 00:30:28 | WARNING | NO keyword detected, defaulting to general intent
+2026-05-03 00:30:28 | INFO | Parsed intent: general
+2026-05-03 00:30:28 | INFO | Selected template for intent: general
+2026-05-03 00:30:28 | ERROR | Attempt 1 failed for raukey08@gmail.com: [Errno -2] Name or service not known
+2026-05-03 00:30:28 | INFO | Retrying in 2 seconds...
+2026-05-03 00:30:31 | ERROR | Attempt 2 failed for raukey08@gmail.com: [Errno 111] Connection refused
+2026-05-03 00:30:31 | INFO | Retrying in 2 seconds...
+2026-05-03 00:30:33 | ERROR | Attempt 3 failed for raukey08@gmail.com: [Errno 111] Connection refused
+2026-05-03 00:30:33 | ERROR | All retry attempts failed for raukey08@gmail.com
+2026-05-03 00:51:59 | INFO | NO unread emails found
