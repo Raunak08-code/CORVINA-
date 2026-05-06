@@ -1,47 +1,33 @@
 import smtplib
 import os
-import time
 from email.mime.text import MIMEText
-from dotenv import load_dotenv
-from core.logger import get_logger
 
-logger = get_logger()
+def send_email(to_email, subject, body):
+    try:
+        EMAIL_USER = os.getenv("EMAIL_USER")
+        EMAIL_PASS = os.getenv("EMAIL_PASS")
 
-load_dotenv()
+        msg = MIMEText(body)
+        msg["Subject"] = subject
+        msg["From"] = EMAIL_USER
+        msg["To"] = to_email
 
-def send_email(to_email, subject, body, max_retries=3, delay=2):
-    EMAIL_USER = os.getenv("EMAIL_USER")
-    EMAIL_PASS = os.getenv("EMAIL_PASS")
-    SMTP_SERVER = os.getenv("SMTP_SERVER")
-    #SMTP_SERVER = "wrong.smtp.server"  # only for testing
-    SMTP_PORT = int(os.getenv("SMTP_PORT"))
+        server = smtplib.SMTP("smtp.gmail.com", 587)
 
-    for attempt in range(1,max_retries+1):
-        try:
-            # creating a message 
-            msg = MIMEText(body)
-            msg["Subject"] = f"Re: {subject}"
-            msg["From"] = EMAIL_USER
-            msg["To"] = to_email
+        server.ehlo()
+        server.starttls()
+        server.ehlo()
 
-            # connecting to SMTP server
-            server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
-            server.starttls()
-            server.login(EMAIL_USER, EMAIL_PASS)
+        server.login(EMAIL_USER, EMAIL_PASS)
 
-            # sending mail
-            server.sendmail(EMAIL_USER, to_email, msg.as_string())
-            server.quit()
-            
-            logger.info(f"Email sent to {to_email} on attempt {attempt}")
-            return True
+        server.send_message(msg)
 
-        except Exception as e:
-            logger.error(f"Attempt {attempt} failed for {to_email}: {e}")
+        server.quit()
 
-            if attempt < max_retries:
-                logger.info(f"Retrying in {delay} seconds...")
-                time.sleep(delay)
-            else:
-                logger.error(f"All retry attempts failed for {to_email}")
-                return False
+        print("EMAIL SENT SUCCESSFULLY")
+
+        return True
+
+    except Exception as e:
+        print("SMTP ERROR:", str(e))
+        return False
