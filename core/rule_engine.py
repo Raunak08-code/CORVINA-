@@ -15,6 +15,7 @@ def get_reply_templates(intent):
     rules = load_rules()
 
     template_file = rules.get(intent,rules.get("general"))
+    logger.info(f"Using template file: {template_file}")
     
     logger.info(f"Selected template for intent: {intent}")
 

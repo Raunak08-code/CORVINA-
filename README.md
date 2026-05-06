@@ -63,6 +63,9 @@ Run endpoint:
 
 ---
 
+> Note: SMTP email sending works locally. 
+> Render free-tier networking restricts outbound SMTP traffic.
+
 ## 🧠 Key Features
 
 * 📥 Fetch unread emails using IMAP
@@ -79,7 +82,7 @@ Run endpoint:
 ---
 
 ## 🏗️ System Architecture
-
+<pre>
 Gmail Inbox
 ↓ (IMAP)
 Email Reader
@@ -93,7 +96,7 @@ Template Generator
 Email Sender (SMTP)
 ↓
 Recipient Inbox
-
+</pre>
 ---
 
 ## 🔁 Execution Flow

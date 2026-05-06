@@ -65,3 +65,25 @@
 2026-05-03 00:30:33 | ERROR | Attempt 3 failed for raukey08@gmail.com: [Errno 111] Connection refused
 2026-05-03 00:30:33 | ERROR | All retry attempts failed for raukey08@gmail.com
 2026-05-03 00:51:59 | INFO | NO unread emails found
+2026-05-06 11:55:19,934 | INFO | API triggered email processing
+2026-05-06 11:55:22,098 | INFO | Fetched email from raukey08@gmail.com with subject 'Looking for internship'
+2026-05-06 11:55:23,445 | INFO | Parsed intent: job_request
+2026-05-06 11:55:23,487 | INFO | Selected template for intent: job_request
+2026-05-06 11:55:29,086 | INFO | Email sent to raukey08@gmail.com
+2026-05-06 11:59:29,566 | INFO | API triggered email processing
+2026-05-06 11:59:33,831 | INFO | Fetched email from raukey08@gmail.com with subject 'I have an issue in my system'
+2026-05-06 11:59:34,454 | INFO | Parsed intent: support_issue
+2026-05-06 11:59:34,454 | INFO | Selected template for intent: support_issue
+2026-05-06 11:59:40,258 | INFO | Email sent to raukey08@gmail.com
+2026-05-06 12:11:47,859 | INFO | API triggered email processing
+2026-05-06 12:11:51,650 | INFO | Fetched email from raukey08@gmail.com with subject 'Looking for internship'
+2026-05-06 12:11:52,083 | INFO | Parsed intent: job_request
+2026-05-06 12:11:52,083 | INFO | Using template file: internship_reply.txt
+2026-05-06 12:11:52,083 | INFO | Selected template for intent: job_request
+2026-05-06 12:11:57,995 | INFO | Email sent to raukey08@gmail.com
+2026-05-06 12:13:45,027 | INFO | API triggered email processing
+2026-05-06 12:13:47,917 | INFO | Fetched email from raukey08@gmail.com with subject 'I got an issue in my system'
+2026-05-06 12:13:48,321 | INFO | Parsed intent: support_issue
+2026-05-06 12:13:48,321 | INFO | Using template file: support_reply.txt
+2026-05-06 12:13:48,322 | INFO | Selected template for intent: support_issue
+2026-05-06 12:13:52,930 | INFO | Email sent to raukey08@gmail.com

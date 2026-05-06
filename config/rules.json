@@ -1,8 +1,7 @@
 {
-  "job_request": "templates/internship_reply.txt",
-  "meeting": "templates/meeting_reply.txt",
-  "leave_request": "templates/leave_reply.txt",
-  "support_issue": "templates/support_reply.txt",
-  "request_info": "templates/info_reply.txt",
-  "general": "templates/default.txt"
+    "job_request": "internship_reply.txt",
+    "meeting": "meeting_reply.txt",
+    "support_issue": "support_reply.txt",
+    "leave": "leave_reply.txt",
+    "general": "default.txt"
 }
